@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.btn{
+  background: linear-gradient(92deg, #D80027 2.08%, #FB9E3C 117.25%);
+}
