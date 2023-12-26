@@ -8,7 +8,14 @@ const config: Config = {
   ],
   theme: {
     extend: {
-     
+      backgroundImage: {
+        'hero-pattern':"url('./assets/images/nft-background.jpg')",
+        "background-image": "url('../public/background-image.png')"
+      },
+      fontFamily: {
+        Rubic: ['Rubik', 'sans-serif'],
+        Poppins:['Poppins', 'sans-serif']
+       },
     },
   },
   plugins: [],
