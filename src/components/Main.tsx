@@ -3,10 +3,13 @@ import React from "react";
 import { Rubik } from "next/font/google";
 import backgroundImage from "../../public/images/background-image.png";
 import mobileGame1 from "../../public/svg/mobile.svg";
-import mobileGame2 from "../../public/svg/mobile2.svg"
-import mobileGame3 from "../../public/svg/mobile3.svg"
-import mobileGame4 from "../../public/svg/mobile4.svg"
+import mobileGame2 from "../../public/svg/mobile2.svg";
+import mobileGame3 from "../../public/svg/mobile3.svg";
+import mobileGame4 from "../../public/svg/mobile4.svg";
+import mobileGame5 from "../../public/svg/mobile5.svg";
+import mobileGame6 from "../../public/svg/mobile6.svg";
 import arrowIcon from "../../public/svg/arrow.svg";
+import NewsletterForm from "./NewsletterForm";
 
 const rubik = Rubik({ weight: "500", style: "normal", subsets: ["latin"] });
 
@@ -71,49 +74,50 @@ const GameingStation: React.FC<GamingProps> = ({ image, text, icon }) => {
 const Main = () => {
   return (
     <>
-      <div className="px-80 bg-slate-200">
-        <div className="w-full bg-red-300  h-[90vh] flex justify-center relative">
+      <div className="2xl:px-80 xl:px-60 lg:px-40 md:px-20 px-0 lg:bg-red-400 xl:bg-cyan-400 bg-white">
+        <div className="w-full bg-red-300 h-[80vh] flex justify-center relative">
           <Image
             src="/game-pad.png"
-            className="absolute inseft-0 bg-no-repeat bg-ccenter bg-cover flecx flcex-col itecms-center justicfy-center "
+            className="absolute inseft-0 bg-no-repeat bg-ccenter bg-cover  "
             width={629}
             height={629}
             alt="game-pad"
           />
 
-          <div className="w-[527px] h-[527px] absolute z-20 top-48 left-0 bg-slate-300 ">
+          <div className="md:w-[527px] h-[527px] absolute z-5 top-48 left-0 bg-sldate-300 ">
             <span className="text-[20px] font-bold leading-[32px] text-[#E87D0E]">
               Proved By prodesigner
             </span>
 
-            <p className="text-[50px] font-bold leading-[70px] w-[480px] bg-stone-400 mb-[24px] ">
+            <p className="text-[50px] font-bold leading-[70px] w-[480px] bg-stfone-400 mb-[24px] ">
               Work that we produce for our clients
             </p>
-            <p className="text-[16px] font-medium leading-[32px]">
+            <p className="text-[16px] font-medium leading-[32px] w-[500px] md:w-full">
               {" "}
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the is standard.
             </p>
+
             <button className="text-base w-[195px] h-[53px] rounded-[40px] btn mt-[50px]">
               Get more details
             </button>
           </div>
         </div>
 
-        <div className="w-full flex flex-col gap-[58px]">
+        <div className="w-full flex flex-col md:gap-[58px] gap-[40px] bg-slate-400">
           {/*  Trending Games and 40 followers */}
           <div className="flex w-full justify-between">
-            <h1 className="text-[31px] font-bold leading-[59px] font-Rubic">
+            <h1 className="md:text-[31px] font-extrabold md:leading-[59px] text-2xl font-Rubic">
               Currently Trending Games
             </h1>
 
-            <button className="h-[57px] w-[139px] rounded-[10px] font-Rubic bg-blue-200 text-[20px] font-medium leading-[38px]">
+            <button className="md:py-[10px] md:w-[139px]  rounded-[10px] font-Rubic bg-blue-200 text-[20px] font-medium leading-[38px]">
               {" "}
               SEE ALL
             </button>
           </div>
 
-          <div className="flex justify-between">
+          <div className="flex justify-between gap-4 md:gap-0">
             <TrendingGames
               image={
                 <Image
@@ -149,8 +153,8 @@ const Main = () => {
               }
               text="40 Followers"
             />
-
-            <TrendingGames
+<div className="hidden md:block">
+<TrendingGames
               image={
                 <Image
                   src="/trending-game1.png"
@@ -161,10 +165,12 @@ const Main = () => {
               }
               text="40 Followers"
             />
+</div>
+
           </div>
 
-          <div className="w-full flex items-center justify-center py-[60px]">
-            <span className="w-[826px] bg-slate-400 text-center text-[35px] font-bold leading-[60px] font-Poppins">
+          <div className="w-full flex items-center justify-center md:py-[60px] py-0">
+            <span className="w-[826px] bg-slate-400 text-center md:text-[35px] text-2xl leading-[40px] font-bold md:leading-[60px] font-Poppins">
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry.
             </span>
@@ -194,14 +200,14 @@ const Main = () => {
       </div>
 
       <div
-        className="bg-blue-400 w-screen background-image bg-scroll flex justify-center items-center"
+        className="bg-blue-400 w-full background-image bg-scroll flex justify-center items-center"
         style={{
           backgroundImage: `url(${backgroundImage})`,
           height: "881px",
         }}
       >
-        <div className="2xl:w-[1045px] h-[696px] bg-slate-500 flex flex-col justify-evenly items-center">
-          <div className="w-[826px] font-Poppins flex flex-col justify-center items-center">
+        <div className="2xl:w-[1045px] w-full h-[696px] bg-slate-500 flex flex-col justify-evenly items-center">
+          <div className="md:w-[826px] w-full font-Poppins flex flex-col justify-center items-center">
             <h1 className="text-center text-[30px] font-bold leading-[50px]">
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry.
@@ -214,136 +220,203 @@ const Main = () => {
             </p>
           </div>
 
-          <div className="w-[1045px] h-[400px] bg-red-200 font-Poppins flex flex-col justify-between items-center">
-           
+          <div className="w-full h-[400px] bg-red-200 font-Poppins flex flex-col justify-between items-center">
             <div className="flex justify-between w-full">
-            <GameingStation
-              image={
-                <Image
-                  src={mobileGame1}
-                  width={30}
-                  height={30}
-                  alt="Mobile Game Development"
-                />
-              }
-              text="Mobile Game Development"
-              icon={
-                <Image
-                  src={arrowIcon}
-                  width={20}
-                  height={20}
-                  alt="arrow icon"
-                />
-              }
-            />
+              <GameingStation
+                image={
+                  <Image
+                    src={mobileGame1}
+                    width={30}
+                    height={30}
+                    alt="Mobile Game Development"
+                  />
+                }
+                text="Mobile Game Development"
+                icon={
+                  <Image
+                    src={arrowIcon}
+                    width={20}
+                    height={20}
+                    alt="arrow icon"
+                  />
+                }
+              />
 
-            <GameingStation
-              image={
-                <Image
-                  src={mobileGame2}
-                  width={30}
-                  height={30}
-                  alt="Mobile Game Development"
-                />
-              }
-              text="Mobile Game Development"
-              icon={
-                <Image
-                  src={arrowIcon}
-                  width={20}
-                  height={20}
-                  alt="arrow icon"
-                />
-              }
-            />
+              <GameingStation
+                image={
+                  <Image
+                    src={mobileGame2}
+                    width={30}
+                    height={30}
+                    alt="Mobile Game Development"
+                  />
+                }
+                text="Mobile Game Development"
+                icon={
+                  <Image
+                    src={arrowIcon}
+                    width={20}
+                    height={20}
+                    alt="arrow icon"
+                  />
+                }
+              />
 
-            <GameingStation
-              image={
-                <Image
-                  src={mobileGame3}
-                  width={30}
-                  height={30}
-                  alt="Mobile Game Development"
-                />
-              }
-              text="Mobile Game Development"
-              icon={
-                <Image
-                  src={arrowIcon}
-                  width={20}
-                  height={20}
-                  alt="arrow icon"
-                />
-              }
-            />
+              <GameingStation
+                image={
+                  <Image
+                    src={mobileGame3}
+                    width={30}
+                    height={30}
+                    alt="Mobile Game Development"
+                  />
+                }
+                text="Mobile Game Development"
+                icon={
+                  <Image
+                    src={arrowIcon}
+                    width={20}
+                    height={20}
+                    alt="arrow icon"
+                  />
+                }
+              />
 
-            <GameingStation
-              image={
-                <Image
-                  src={mobileGame4}
-                  width={30}
-                  height={30}
-                  alt="Mobile Game Development"
-                />
-              }
-              text="Mobile Game Development"
-              icon={
-                <Image
-                  src={arrowIcon}
-                  width={20}
-                  height={20}
-                  alt="arrow icon"
-                />
-              }
-            />
-
+              <GameingStation
+                image={
+                  <Image
+                    src={mobileGame4}
+                    width={30}
+                    height={30}
+                    alt="Mobile Game Development"
+                  />
+                }
+                text="Mobile Game Development"
+                icon={
+                  <Image
+                    src={arrowIcon}
+                    width={20}
+                    height={20}
+                    alt="arrow icon"
+                  />
+                }
+              />
             </div>
 
             <div className="flex gap-[] justify-evenly w-full">
-            <GameingStation
-              image={
-                <Image
-                  src={mobileGame1}
-                  width={30}
-                  height={30}
-                  alt="AR/ VR design"
-                />
-              }
-              text="AR/ VR design"
-              icon={
-                <Image
-                  src={arrowIcon}
-                  width={20}
-                  height={20}
-                  alt="arrow icon"
-                />
-              }
-            />
-            <GameingStation
-              image={
-                <Image
-                  src={mobileGame1}
-                  width={30}
-                  height={30}
-                  alt="Mobile Game Development"
-                />
-              }
-              text="Mobile Game Development"
-              icon={
-                <Image
-                  src={arrowIcon}
-                  width={20}
-                  height={20}
-                  alt="arrow icon"
-                />
-              }
-            />
-
-
-
+              <GameingStation
+                image={
+                  <Image
+                    src={mobileGame1}
+                    width={30}
+                    height={30}
+                    alt="AR/ VR design"
+                  />
+                }
+                text="AR/ VR design"
+                icon={
+                  <Image
+                    src={arrowIcon}
+                    width={20}
+                    height={20}
+                    alt="arrow icon"
+                  />
+                }
+              />
+              <GameingStation
+                image={
+                  <Image
+                    src={mobileGame1}
+                    width={30}
+                    height={30}
+                    alt="Mobile Game Development"
+                  />
+                }
+                text="Mobile Game Development"
+                icon={
+                  <Image
+                    src={arrowIcon}
+                    width={20}
+                    height={20}
+                    alt="arrow icon"
+                  />
+                }
+              />
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Recent project section */}
+
+      <div className="2xl:px-80 xl:px-60 lg:px-40 md:px-20 px-0 bg-green-200 items-center flex flex-col ">
+        <div className="justify-between md:h-[678px] flex flex-col w-full items-center ">
+          <div className="md:w-[550px] w-full h-[128px]">
+            <h1 className="text-[30px] font-Poppins font-extrabold leading-[57px] text-center">
+              Our Recent Projects
+            </h1>
+
+            <p className="text-center font-Poppins text-base font-normal leading-[27px]">
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry.{" "}
+            </p>
+          </div>
+
+          <div className="flex flex-col gap-6">
+            <div className="flex gap-6">
+              <Image
+                src="/game-station1.png"
+                width={382}
+                height={223}
+                className=""
+                alt="game station"
+              />
+              <Image
+                src="/game-station2.png"
+                width={382}
+                height={223}
+                className=""
+                alt="game station"
+              />
+              <Image
+                src="/game-station3.png"
+                width={352}
+                height={223}
+                className=""
+                alt="game station"
+              />
+            </div>
+            <div className="flex gap-6">
+              <Image
+                src="/game-station4.png"
+                width={246}
+                height={223}
+                className=""
+                alt="game station"
+              />
+              <Image
+                src="/game-station5.png"
+                width={401}
+                height={223}
+                className=""
+                alt="game station"
+              />
+              <Image
+                src="/game-station6.png"
+                width={469}
+                height={223}
+                className=""
+                alt="game station"
+              />
+            </div>
+          </div>
+        </div>
+
+        <button className="w-[139px] h-[57px] rounded-[10px] bg-slate-500 2xl:my-20 my-10">
+          SEE ALL
+        </button>
+
+        <NewsletterForm />
       </div>
     </>
   );
